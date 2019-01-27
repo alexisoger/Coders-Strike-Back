@@ -1,0 +1,30 @@
+
+1)temps passé 1h
+wook1, boss 2 vaincu
+
+2)temps passé 30min
+bronze league, boss 3 vaincu
+Quand on est loin du checkpoint on adapte la vitesse en fonction de l'angle
+vitesse = abs(angle)
+
+au premier tour on trouve la coordoné du checkpoint le plus loin du checkpoint précédent
+au deuxième tour quand le prochain checkpoint est le bon et que l'angle est entre -5 et 5 on Boost
+(amélioration annulé car l'adversaire prenait trop d'avance au début)
+
+3)temps passé 4h, pas de passage de league
+Quand on est loin du checkpoint on adapte la vitesse en fonction de l'angle
+angle 180, vitesse 0
+angle 90, vitesse 50
+angle 45, vitesse 75
+angle 0, vitesse 100
+vitesse = 100 -abs(angle)*50/90
+
+Quand on est proche des checkpoint on ralentis sauf si on est devant pour ne pas être trop vulnérable à un choc
+if(nextCheckpointDist<2400 && (dist-nextCheckpointDist)>0)
+            speed=speed/2;
+Si on est 2ème et près d'un chekpoint on va a la vitesse maximale en direction de l'adversaire pour lui rentrer dedans
+Si on est 2ème et qu'on viens de passer un chekpoint on essaye de rentrer dans l'adversaire
+
+
+
+
